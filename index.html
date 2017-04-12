@@ -199,6 +199,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -527,240 +537,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://yingshanguo.github.io/2017/03/31/AngularJS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yoko Kuok">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/./images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yoko Kuok's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/31/AngularJS/" itemprop="url">
-                  AngularJS
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T20:07:03+08:00">
-                2017-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><!--<ol>
-    <li><a href="#AngularJS-basic">AngularJS基础</a>
-        <ul>
-            <li><a href="#AngularJS-basic-1">AngularJS工作原理</a>
-      </li>
-      <li><a href="#AngularJS-basic-2">My First App</a>
-        <ul>
-          <li><a href="#Angular-basic-2.1">Angular工作流程</a></li>
-        </ul> 
-      </li>
-      <li><a href="#AngularJS-basic-3">Directive</a></li>
-            <li><a href="#AngularJS-basic-4">Services</a></li>
-    </ul>
-  <li><a href="#AngularJS-QA">AngularJS常错</a></li>
-    <li><a href="#AngularJS-tricks">AngularJS Tricks</a>
-        <ul>
-            <li><a href="#AngularJS-tricks-1">选择栏切换样式</a></li>
-        </ul>
-    </li>
-</ol>-->
-<p><a id="AngularJS-basic"></a></p>
-<h2 id="AngularJS基础"><a href="#AngularJS基础" class="headerlink" title="AngularJS基础"></a>AngularJS基础</h2><p><a id="AngularJS-basic-1"></a></p>
-<h3 id="AngularJS-工作原理"><a href="#AngularJS-工作原理" class="headerlink" title="AngularJS 工作原理"></a>AngularJS 工作原理</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
-<ul>
-<li>加载html，然后解析成DOM；</li>
-<li>加载angular.js脚本；</li>
-<li>AngularJS等待DOMContentLoaded事件的触发；</li>
-<li>AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；</li>
-<li>使用ng-app中指定的模块配置$injector；</li>
-<li>使用injector创建injector创建compile服务和$rootScope；</li>
-<li>使用compile服务编译DOM并把它链接到compile服务编译DOM并把它链接到rootScope上；</li>
-<li>ng-init指令对scope里面的变量name进行赋值；</li>
-<li>对表达式进行替换，于是乎，显示为“Hello World!”<br>整个过程可以用这张图来表示：</li>
-</ul>
-<p><img src="./images/AngularJS-001.png"><br><a id="AngularJS-basic-2"></a></p>
-<h3 id="My-First-App"><a href="#My-First-App" class="headerlink" title="My First App"></a>My First App</h3><p>This is our typical workflow when making an AngularJS app:</p>
-<ul>
-<li>Create a module, and use ng-app in the view to define the application scope.</li>
-<li>Create a controller, and use ng-controller in the view to define the controller scope.</li>
-<li>Add data to $scope in the controller so they can be displayed with expressions in the view.</li>
-</ul>
-<h5 id="1-In-app-js-type-in-the-contents-exactly-as-you-see-here"><a href="#1-In-app-js-type-in-the-contents-exactly-as-you-see-here" class="headerlink" title="1. In app.js, type in the contents exactly as you see here:"></a>1. In app.js, type in the contents exactly as you see here:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"myApp"</span>, []);</div></pre></td></tr></table></figure>
-<h5 id="2-Open-up-index-html-Modify-the-tag-so-it-looks-like-this"><a href="#2-Open-up-index-html-Modify-the-tag-so-it-looks-like-this" class="headerlink" title="2. Open up index.html. Modify the  tag so it looks like this:"></a>2. Open up index.html. Modify the <body> tag so it looks like this:</body></h5><ul>
-<li>The <figure class="highlight plain"><figcaption><span>``` is called a directive.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;body ng=app=&quot;myApp&quot;&gt;</div></pre></td></tr></table></figure></li>
-</ul>
-<h5 id="3-Open-up-js-controllers-MainController-js-Type-in-the-contents-exactly-as-you-see-here"><a href="#3-Open-up-js-controllers-MainController-js-Type-in-the-contents-exactly-as-you-see-here" class="headerlink" title="3. Open up js/controllers/MainController.js. Type in the contents exactly as you see here:"></a>3. Open up js/controllers/MainController.js. Type in the contents exactly as you see here:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">    $scope.title=<span class="string">'Top Sellers in Books'</span>;</div><div class="line">  &#125;]);</div></pre></td></tr></table></figure>
-<h5 id="4-Go-to-index-html-Modify-the"><a href="#4-Go-to-index-html-Modify-the" class="headerlink" title="4. Go to index.html. Modify the"></a>4. Go to index.html. Modify the<figure class="highlight plain"><figcaption><span>class="main">``` tag so it looks like this:</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;main&quot; ng-controller=&apos;MainController&apos;&gt;</div></pre></td></tr></table></figure></h5><h5 id="5-In-index-html-inside"><a href="#5-In-index-html-inside" class="headerlink" title="5. In index.html inside "></a>5. In index.html inside <figure class="highlight plain"><figcaption><span>class="main">```, modify the ```<h1>``` element so it looks like this:</h1></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- Inside``` &lt;div class=&quot;main&quot;&gt;``` we accessed``` $scope.title``` using ```&#123;&#123; title &#125;&#125;```. This is called an expression. Expressions are used to display values on the page.</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;main&quot; ng-controller=&apos;MainController&apos;&gt;</div><div class="line">  &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></h5><h4 id="使用-filter"><a href="#使用-filter" class="headerlink" title="使用 filter"></a>使用 filter</h4><p>Let’s do a quick review:</p>
-<ul>
-<li>A module contains the different components of an AngularJS app</li>
-<li>A controller manages the app’s data</li>
-<li>An expression displays values on the page</li>
-<li>A filter formats the val<br>ue of an expression</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$scope.product=&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="string">'08'</span>)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</div><div class="line">  &lt;img src="img/the-book-of-trees.jpg"&gt;</div><div class="line">  &lt;p class="title"&gt; &#123;&#123; title | uppercase &#125;&#125;&lt;/p&gt;</div><div class="line">  &lt;p class="price"&gt;&#123;&#123;product.price | currency&#125;&#125; &lt;/p&gt;</div><div class="line">  &lt;p class="date"&gt;&#123;&#123;product.pubdate | date&#125;&#125; &lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h4 id="使用-ng-repeat"><a href="#使用-ng-repeat" class="headerlink" title="使用 ng-repeat"></a>使用 ng-repeat</h4><ul>
-<li>改写products为数组</li>
-<li>添加ng-repeat</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$scope.products=[&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="number">08</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/the-book-of-trees.jpg'</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Program or be Programmed'</span>,</div><div class="line">  <span class="attr">price</span>: <span class="number">8</span>,</div><div class="line">  <span class="attr">pubdate</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013'</span>, <span class="string">'08'</span>, <span class="string">'01'</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/program-or-be-programmed.jpg'</span></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-repeat=<span class="string">"product in products"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-6"</span>&gt;</div><div class="line">  &lt;div class="thumbnail"&gt;</div><div class="line">    &lt;img ng-src="&#123;&#123;product.cover&#125;&#125;"&gt;</div><div class="line">    &lt;p class="title"&gt; &#123;&#123; title | uppercase &#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p class="price"&gt;&#123;&#123;product.price | currency&#125;&#125; &lt;/p&gt;</div><div class="line">    &lt;p class="date"&gt;&#123;&#123;product.pubdate | date&#125;&#125;</div><div class="line">    &lt;div class="rating"&gt;</div><div class="line">      &lt;p class="likes" ng-click="plusOne($index)"&gt;&#123;&#123;product.likes&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h4 id="编写方法"><a href="#编写方法" class="headerlink" title="编写方法"></a>编写方法</h4><ul>
-<li>添加likes</li>
-<li>编写方法</li>
-<li>添加 ng-click</li>
-</ul>
-<p>Each time you click on the number of likes, the number goes up. How does it work?</p>
-<ul>
-<li>The ng-click is a directive. When <p class="likes"> is clicked, ng-click tells AngularJS to run the plusOne() function in the controller.</p></li>
-<li>The plusOne() function gets the index of the product that was clicked, and then adds one to that product’s likes property.</li>
-</ul>
-<p>Notice that the plusOne() doesn’t interact with the view at all; it just updates the controller. Any change made to the controller shows up in the view.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$scope.products=[&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="number">08</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/the-book-of-trees.jpg'</span> ，</div><div class="line">  likes:<span class="number">0</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Program or be Programmed'</span>,</div><div class="line">  <span class="attr">price</span>: <span class="number">8</span>,</div><div class="line">  <span class="attr">pubdate</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013'</span>, <span class="string">'08'</span>, <span class="string">'01'</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/program-or-be-programmed.jpg'</span> ，</div><div class="line">  likes:<span class="number">0</span></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.plusOne=<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</div><div class="line">  $scope.products[index].likes+=<span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"likes"</span> ng-click=<span class="string">"plusOne($index)"</span>&gt;</div></pre></td></tr></table></figure>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="./images/AngularJS-002.png"></p>
-<p><a id="AngularJS-basic-3"></a></p>
-<h3 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h3><ul>
-<li>建立Directive名为appInfo</li>
-<li>在index.html引入文件</li>
-<li>在appInfo.html中编写appInfo的内容</li>
-<li>在index.html中引用app-info</li>
-</ul>
-<h4 id="1-In-the-new-file-js-directives-appInfo-js-type-in-this-code"><a href="#1-In-the-new-file-js-directives-appInfo-js-type-in-this-code" class="headerlink" title="1. In the new file js/directives/appInfo.js, type in this code:"></a>1. In the new file js/directives/appInfo.js, type in this code:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.directive(<span class="string">'appInfo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">restrict</span>: <span class="string">'E'</span>,</div><div class="line">    <span class="attr">scope</span>: &#123;</div><div class="line">      <span class="attr">info</span>: <span class="string">'='</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">templateUrl</span>: <span class="string">'js/directives/appInfo.html'</span></div><div class="line">  &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h4 id="2-Include-this-new-JavaScript-file-in-index-html-in-line-48-as-a"><a href="#2-Include-this-new-JavaScript-file-in-index-html-in-line-48-as-a" class="headerlink" title="2. Include this new JavaScript file in index.html in line 48 as a "></a>2. Include this new JavaScript file in index.html in line 48 as a <figure class="highlight plain"><figcaption><span>element.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```javascript</div><div class="line">&lt;!-- Directives --&gt;</div><div class="line">&lt;script src=&quot;js/directives/appInfo.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></h4><h4 id="3-In-the-new-file-js-directives-appInfo-html-Type-in-this-HTML-to-display-an-app’s-info"><a href="#3-In-the-new-file-js-directives-appInfo-html-Type-in-this-HTML-to-display-an-app’s-info" class="headerlink" title="3. In the new file js/directives/appInfo.html. Type in this HTML to display an app’s info:"></a>3. In the new file js/directives/appInfo.html. Type in this HTML to display an app’s info:</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img class="icon" ng-src="&#123;&#123; info.icon &#125;&#125;"&gt;</div><div class="line">&lt;h2 class="title"&gt;&#123;&#123; info.title &#125;&#125;&lt;/h2&gt;</div><div class="line">&lt;p class="developer"&gt;&#123;&#123; info.developer &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p class="price"&gt;&#123;&#123; info.price | currency &#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h4 id="4-In-index-html-replace-the-contents-of-the-first-card-div-with-the-new-element"><a href="#4-In-index-html-replace-the-contents-of-the-first-card-div-with-the-new-element" class="headerlink" title="4. In index.html, replace the contents of the first .card div with the new  element:"></a>4. In index.html, replace the contents of the first .card div with the new <app-info> element:</app-info></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card"</span>&gt;</div><div class="line">  &lt;app-info info="move"&gt;&lt;/app-info&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>附录：<br>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>, [<span class="string">'$scope'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</div><div class="line">  $scope.apps = [</div><div class="line">  	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/move.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'MOVE'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'MOVE, Inc.'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">0.99</span></div><div class="line">  	&#125;,</div><div class="line"> 	 	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/shutterbugg.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'Shutterbugg'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'Chico Dusty'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">2.99</span></div><div class="line">  	&#125;,</div><div class="line"> 	 	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/gameboard.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'Gameboard'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'Armando Perez'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">1.99</span></div><div class="line">  	&#125;,  </div><div class="line"> 	 	&#123;</div><div class="line">      <span class="attr">icon</span>: <span class="string">'img/forecast.jpg'</span>,</div><div class="line">      <span class="attr">title</span>: <span class="string">'Forecast'</span>,</div><div class="line">      <span class="attr">developer</span>: <span class="string">'Forecast'</span>,</div><div class="line">      <span class="attr">price</span>: <span class="number">1.99</span></div><div class="line">    &#125;</div><div class="line">	]</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
-<p>What did we just do? We wrote code to teach the browser a new HTML element <figure class="highlight plain"><figcaption><span>and used it in the view to display each app's details.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">First in ```js/directives/appInfo.js```, we made a new directive. We used``` app.directive ```to create a new directive named ```&apos;appInfo&apos;```. It returns an object with three options:</div><div class="line"></div><div class="line">- ```restrict ```specifies how the directive will be used in the view. The ```&apos;E&apos; ```means it will be used as a new HTML element.</div><div class="line">- ```scope``` specifies that we will pass information into this directive through an attribute named ```info```. The ```=``` tells the directive to look for an attribute named ```info``` in the ```&lt;app-info&gt;``` element, like this:</div><div class="line">```javascript</div><div class="line"> &lt;app-info info=&quot;shutterbugg&quot;&gt;&lt;/app-info&gt;</div></pre></td></tr></table></figure></p>
-<p>The data in<figure class="highlight plain"><figcaption><span>```becomes available to use in the template given by ```templateURL```.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">- templateUrl specifies the HTML to use in order to display the data in scope.info. Here we use the HTML in js/directives/appInfo.html.</div><div class="line"></div><div class="line">#### 使用 Dective  添加function</div><div class="line">js/deritves/installApp.js</div><div class="line">```javascript</div><div class="line">app.directive(&apos;installApp&apos;, function() &#123;</div><div class="line">  return &#123;</div><div class="line">    restrict: &apos;E&apos;,</div><div class="line">    scope: &#123;&#125;,</div><div class="line">    templateUrl: &apos;js/directives/installApp.html&apos;,</div><div class="line"></div><div class="line">    link: function(scope, element, attrs) &#123;</div><div class="line">      scope.buttonText = &quot;Install&quot;,</div><div class="line">      scope.installed = false,</div><div class="line"></div><div class="line">      scope.download = function() &#123;</div><div class="line">        element.toggleClass(&apos;btn-active&apos;)</div><div class="line">        if(scope.installed) &#123;</div><div class="line">          scope.buttonText = &quot;Install&quot;;</div><div class="line">          scope.installed = false;</div><div class="line">        &#125; else &#123;</div><div class="line">          scope.buttonText = &quot;Uninstall&quot;;</div><div class="line">          scope.installed = true;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line">```  </div><div class="line">js/deritves/installApp.html</div><div class="line">```javascript</div><div class="line">&lt;button class=&quot;btn btn-active&quot; ng-click=&quot;download()&quot;&gt;</div><div class="line">  &#123;&#123; buttonText &#125;&#125;</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure></p>
-<p>index.html<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card"</span> ng-repeat=<span class="string">"app in apps"</span>&gt;</div><div class="line"> &lt;app-info info="app"&gt;&lt;/app-info&gt;</div><div class="line"> &lt;install-app&gt;&lt;/install-app&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"js/directives/installApp.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p><a id="AngularJS-basic-4"></a></p>
-<h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><p>关键词：  </p>
-<ul>
-<li>factory</li>
-<li>GET</li>
-</ul>
-<h4 id="1-Create-a-service-named-forecast-that-fetches-the-weather-data-from-the-server-In-the-new-file-js-services-forecast-js-Type-in-this-code-exactly-as-you-see-here"><a href="#1-Create-a-service-named-forecast-that-fetches-the-weather-data-from-the-server-In-the-new-file-js-services-forecast-js-Type-in-this-code-exactly-as-you-see-here" class="headerlink" title="1. Create a service named forecast that fetches the weather data from the server. In the new file js/services/forecast.js. Type in this code exactly as you see here:"></a>1. Create a service named forecast that fetches the weather data from the server. In the new file js/services/forecast.js. Type in this code exactly as you see here:</h4><p>js/services/forecast.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.factory(<span class="string">'forecast'</span>, [<span class="string">'$http'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$http</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> $http.get(<span class="string">'https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json'</span>)</div><div class="line">            .success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">              <span class="keyword">return</span> data;</div><div class="line">            &#125;)</div><div class="line">            .error(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">              <span class="keyword">return</span> err;</div><div class="line">            &#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
-<h4 id="2-Include-js-services-forecast-js-in-index-html-add-a-new"><a href="#2-Include-js-services-forecast-js-in-index-html-add-a-new" class="headerlink" title="2. Include js/services/forecast.js in index.html add a new "></a>2. Include js/services/forecast.js in index.html add a new <figure class="highlight plain"><figcaption><span>```element.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">index.html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;forecast&quot; ng-repeat=&quot;day in fiveDay.days&quot;&gt;</div><div class="line"></div><div class="line">&lt;!-- Services --&gt;</div><div class="line">&lt;script src=&quot;js/services/forecast.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></h4><h4 id="3-In-the-controller-modify-MainController-by-passing-in-the-forecast-service-like-this"><a href="#3-In-the-controller-modify-MainController-by-passing-in-the-forecast-service-like-this" class="headerlink" title="3. In the controller, modify MainController by passing in the forecast service, like this:"></a>3. In the controller, modify MainController by passing in the forecast service, like this:</h4><p>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>, [<span class="string">'$scope'</span>, <span class="string">'forecast'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, forecast</span>) </span>&#123;</div><div class="line">  forecast.success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    $scope.fiveDay = data;</div><div class="line">  &#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
-<h4 id="4-Inside-MainController-use-the-forecast-service-to-save-the-weather-data-into-scope-fiveDay-like-this"><a href="#4-Inside-MainController-use-the-forecast-service-to-save-the-weather-data-into-scope-fiveDay-like-this" class="headerlink" title="4. Inside MainController, use the forecast service to save the weather data into $scope.fiveDay, like this:"></a>4. Inside MainController, use the forecast service to save the weather data into $scope.fiveDay, like this:</h4><p>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">forecast.success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">	$scope.fiveDay = data;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>How does it work?</p>
-<ul>
-<li>First in <figure class="highlight plain"><figcaption><span>we made a new service. We used ```app.factory``` to create a new service named ```forecast```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- The ```forecast``` service needs to use AngularJS&apos;s built-in ```$http``` to fetch JSON from the server. Therefore, we add ```$http``` to the ```forecast``` service as a dependency, like this:</div><div class="line">```javascript</div><div class="line"> [&apos;$http&apos;, function($http) &#123;</div><div class="line">   // ...</div><div class="line"> &#125;]</div></pre></td></tr></table></figure></li>
-</ul>
-<p>Now <figure class="highlight plain"><figcaption><span>is available to use inside ```forecast```.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- Then, inside ```forecast```, we use ```$http``` to construct an HTTP ```GET``` request for the weather data. If the request succeeds, the weather data is returned; otherwise the error info is returned.</div><div class="line">- Next in the controller, we used the ```forecast``` service to fetch data from the server. First we added ```forecast``` into ```MainController``` as a dependency so that it&apos;s available to use. Then within the controller we used ```forecast``` to asynchronously fetch the weather data from the server and store it into ```$scope.fiveDay</div></pre></td></tr></table></figure></p>
-<ul>
-<li>As before, any properties attached to <figure class="highlight plain"><figcaption><span>become available to use in the view. This means in ```index.html```, we can display the ```city_name``` using an expression as done before.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">----------</div><div class="line">&lt;a id=&quot;AngularJS-QA&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS 常错</div></pre></td></tr></table></figure></li>
-</ul>
-<p><img ng-src=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">&lt;a id=&quot;AngularJS-tircks&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS Tricks</div><div class="line">&lt;a id=&quot;AngularJS-tircks-1&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">#### 选择栏切换样式</div><div class="line">- html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==1?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(1)&quot; class=&quot;honor-click&quot;&gt;&lt;span&gt;全部&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==2?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(2)&quot;&gt;&lt;span&gt;本周&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==3?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(3)&quot;&gt;&lt;span&gt;本月&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==4?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(4)&quot;&gt;&lt;span&gt;自定义时间&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;td  ng-show=&quot;timeNavType==4&quot;&gt;</div><div class="line">	&lt;div class=&quot;myclass-honor-time&quot;&gt;</div><div class="line">			&lt;span&gt;&lt;/span&gt;</div><div class="line">			&lt;input type=&quot;text&quot; placeholder=&quot;2017-02-16&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/td&gt;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>js</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$scope.timeNavType = <span class="number">1</span>;</div><div class="line">$scope.chooseTimeNav = <span class="function"><span class="keyword">function</span> (<span class="params">typ</span>) </span>&#123;</div><div class="line">		$scope.timeNavType = typ;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://yingshanguo.github.io/2017/03/31/CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -985,6 +761,240 @@ function showMask(n) {
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_Started/Selectors" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_Started/Selectors</a></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">body &#123; background-color: #ffffc9 &#125;</div><div class="line">a:link &#123; color: blue &#125; /* 未访问链接 */</div><div class="line">a:visited &#123; color: purple &#125; /* 已访问链接 */</div><div class="line">a:hover &#123; font-weight: bold &#125; /* 用户鼠标悬停 */</div><div class="line">a:active &#123; color: lime &#125; /* 激活链接 */</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://yingshanguo.github.io/2017/03/31/AngularJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yoko Kuok">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/./images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yoko Kuok's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/31/AngularJS/" itemprop="url">
+                  AngularJS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T20:07:03+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><!--<ol>
+    <li><a href="#AngularJS-basic">AngularJS基础</a>
+        <ul>
+            <li><a href="#AngularJS-basic-1">AngularJS工作原理</a>
+      </li>
+      <li><a href="#AngularJS-basic-2">My First App</a>
+        <ul>
+          <li><a href="#Angular-basic-2.1">Angular工作流程</a></li>
+        </ul> 
+      </li>
+      <li><a href="#AngularJS-basic-3">Directive</a></li>
+            <li><a href="#AngularJS-basic-4">Services</a></li>
+    </ul>
+  <li><a href="#AngularJS-QA">AngularJS常错</a></li>
+    <li><a href="#AngularJS-tricks">AngularJS Tricks</a>
+        <ul>
+            <li><a href="#AngularJS-tricks-1">选择栏切换样式</a></li>
+        </ul>
+    </li>
+</ol>-->
+<p><a id="AngularJS-basic"></a></p>
+<h2 id="AngularJS基础"><a href="#AngularJS基础" class="headerlink" title="AngularJS基础"></a>AngularJS基础</h2><p><a id="AngularJS-basic-1"></a></p>
+<h3 id="AngularJS-工作原理"><a href="#AngularJS-工作原理" class="headerlink" title="AngularJS 工作原理"></a>AngularJS 工作原理</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
+<ul>
+<li>加载html，然后解析成DOM；</li>
+<li>加载angular.js脚本；</li>
+<li>AngularJS等待DOMContentLoaded事件的触发；</li>
+<li>AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；</li>
+<li>使用ng-app中指定的模块配置$injector；</li>
+<li>使用injector创建injector创建compile服务和$rootScope；</li>
+<li>使用compile服务编译DOM并把它链接到compile服务编译DOM并把它链接到rootScope上；</li>
+<li>ng-init指令对scope里面的变量name进行赋值；</li>
+<li>对表达式进行替换，于是乎，显示为“Hello World!”<br>整个过程可以用这张图来表示：</li>
+</ul>
+<p><img src="./images/AngularJS-001.png"><br><a id="AngularJS-basic-2"></a></p>
+<h3 id="My-First-App"><a href="#My-First-App" class="headerlink" title="My First App"></a>My First App</h3><p>This is our typical workflow when making an AngularJS app:</p>
+<ul>
+<li>Create a module, and use ng-app in the view to define the application scope.</li>
+<li>Create a controller, and use ng-controller in the view to define the controller scope.</li>
+<li>Add data to $scope in the controller so they can be displayed with expressions in the view.</li>
+</ul>
+<h5 id="1-In-app-js-type-in-the-contents-exactly-as-you-see-here"><a href="#1-In-app-js-type-in-the-contents-exactly-as-you-see-here" class="headerlink" title="1. In app.js, type in the contents exactly as you see here:"></a>1. In app.js, type in the contents exactly as you see here:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"myApp"</span>, []);</div></pre></td></tr></table></figure>
+<h5 id="2-Open-up-index-html-Modify-the-tag-so-it-looks-like-this"><a href="#2-Open-up-index-html-Modify-the-tag-so-it-looks-like-this" class="headerlink" title="2. Open up index.html. Modify the  tag so it looks like this:"></a>2. Open up index.html. Modify the <body> tag so it looks like this:</body></h5><ul>
+<li>The <figure class="highlight plain"><figcaption><span>``` is called a directive.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;body ng=app=&quot;myApp&quot;&gt;</div></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="3-Open-up-js-controllers-MainController-js-Type-in-the-contents-exactly-as-you-see-here"><a href="#3-Open-up-js-controllers-MainController-js-Type-in-the-contents-exactly-as-you-see-here" class="headerlink" title="3. Open up js/controllers/MainController.js. Type in the contents exactly as you see here:"></a>3. Open up js/controllers/MainController.js. Type in the contents exactly as you see here:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">    $scope.title=<span class="string">'Top Sellers in Books'</span>;</div><div class="line">  &#125;]);</div></pre></td></tr></table></figure>
+<h5 id="4-Go-to-index-html-Modify-the"><a href="#4-Go-to-index-html-Modify-the" class="headerlink" title="4. Go to index.html. Modify the"></a>4. Go to index.html. Modify the<figure class="highlight plain"><figcaption><span>class="main">``` tag so it looks like this:</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;main&quot; ng-controller=&apos;MainController&apos;&gt;</div></pre></td></tr></table></figure></h5><h5 id="5-In-index-html-inside"><a href="#5-In-index-html-inside" class="headerlink" title="5. In index.html inside "></a>5. In index.html inside <figure class="highlight plain"><figcaption><span>class="main">```, modify the ```<h1>``` element so it looks like this:</h1></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- Inside``` &lt;div class=&quot;main&quot;&gt;``` we accessed``` $scope.title``` using ```&#123;&#123; title &#125;&#125;```. This is called an expression. Expressions are used to display values on the page.</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;main&quot; ng-controller=&apos;MainController&apos;&gt;</div><div class="line">  &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></h5><h4 id="使用-filter"><a href="#使用-filter" class="headerlink" title="使用 filter"></a>使用 filter</h4><p>Let’s do a quick review:</p>
+<ul>
+<li>A module contains the different components of an AngularJS app</li>
+<li>A controller manages the app’s data</li>
+<li>An expression displays values on the page</li>
+<li>A filter formats the val<br>ue of an expression</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$scope.product=&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="string">'08'</span>)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</div><div class="line">  &lt;img src="img/the-book-of-trees.jpg"&gt;</div><div class="line">  &lt;p class="title"&gt; &#123;&#123; title | uppercase &#125;&#125;&lt;/p&gt;</div><div class="line">  &lt;p class="price"&gt;&#123;&#123;product.price | currency&#125;&#125; &lt;/p&gt;</div><div class="line">  &lt;p class="date"&gt;&#123;&#123;product.pubdate | date&#125;&#125; &lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h4 id="使用-ng-repeat"><a href="#使用-ng-repeat" class="headerlink" title="使用 ng-repeat"></a>使用 ng-repeat</h4><ul>
+<li>改写products为数组</li>
+<li>添加ng-repeat</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$scope.products=[&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="number">08</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/the-book-of-trees.jpg'</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Program or be Programmed'</span>,</div><div class="line">  <span class="attr">price</span>: <span class="number">8</span>,</div><div class="line">  <span class="attr">pubdate</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013'</span>, <span class="string">'08'</span>, <span class="string">'01'</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/program-or-be-programmed.jpg'</span></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-repeat=<span class="string">"product in products"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-6"</span>&gt;</div><div class="line">  &lt;div class="thumbnail"&gt;</div><div class="line">    &lt;img ng-src="&#123;&#123;product.cover&#125;&#125;"&gt;</div><div class="line">    &lt;p class="title"&gt; &#123;&#123; title | uppercase &#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p class="price"&gt;&#123;&#123;product.price | currency&#125;&#125; &lt;/p&gt;</div><div class="line">    &lt;p class="date"&gt;&#123;&#123;product.pubdate | date&#125;&#125;</div><div class="line">    &lt;div class="rating"&gt;</div><div class="line">      &lt;p class="likes" ng-click="plusOne($index)"&gt;&#123;&#123;product.likes&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h4 id="编写方法"><a href="#编写方法" class="headerlink" title="编写方法"></a>编写方法</h4><ul>
+<li>添加likes</li>
+<li>编写方法</li>
+<li>添加 ng-click</li>
+</ul>
+<p>Each time you click on the number of likes, the number goes up. How does it work?</p>
+<ul>
+<li>The ng-click is a directive. When <p class="likes"> is clicked, ng-click tells AngularJS to run the plusOne() function in the controller.</p></li>
+<li>The plusOne() function gets the index of the product that was clicked, and then adds one to that product’s likes property.</li>
+</ul>
+<p>Notice that the plusOne() doesn’t interact with the view at all; it just updates the controller. Any change made to the controller shows up in the view.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$scope.products=[&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'The Book of Trees'</span>,</div><div class="line">  <span class="attr">price</span>:<span class="number">19</span>,</div><div class="line">  <span class="attr">pubdate</span>:<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2014'</span>,<span class="string">'03'</span>,<span class="number">08</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/the-book-of-trees.jpg'</span> ，</div><div class="line">  likes:<span class="number">0</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'Program or be Programmed'</span>,</div><div class="line">  <span class="attr">price</span>: <span class="number">8</span>,</div><div class="line">  <span class="attr">pubdate</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2013'</span>, <span class="string">'08'</span>, <span class="string">'01'</span>),</div><div class="line">  <span class="attr">cover</span>: <span class="string">'img/program-or-be-programmed.jpg'</span> ，</div><div class="line">  likes:<span class="number">0</span></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.plusOne=<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</div><div class="line">  $scope.products[index].likes+=<span class="number">1</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"likes"</span> ng-click=<span class="string">"plusOne($index)"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="./images/AngularJS-002.png"></p>
+<p><a id="AngularJS-basic-3"></a></p>
+<h3 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h3><ul>
+<li>建立Directive名为appInfo</li>
+<li>在index.html引入文件</li>
+<li>在appInfo.html中编写appInfo的内容</li>
+<li>在index.html中引用app-info</li>
+</ul>
+<h4 id="1-In-the-new-file-js-directives-appInfo-js-type-in-this-code"><a href="#1-In-the-new-file-js-directives-appInfo-js-type-in-this-code" class="headerlink" title="1. In the new file js/directives/appInfo.js, type in this code:"></a>1. In the new file js/directives/appInfo.js, type in this code:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.directive(<span class="string">'appInfo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">restrict</span>: <span class="string">'E'</span>,</div><div class="line">    <span class="attr">scope</span>: &#123;</div><div class="line">      <span class="attr">info</span>: <span class="string">'='</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">templateUrl</span>: <span class="string">'js/directives/appInfo.html'</span></div><div class="line">  &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="2-Include-this-new-JavaScript-file-in-index-html-in-line-48-as-a"><a href="#2-Include-this-new-JavaScript-file-in-index-html-in-line-48-as-a" class="headerlink" title="2. Include this new JavaScript file in index.html in line 48 as a "></a>2. Include this new JavaScript file in index.html in line 48 as a <figure class="highlight plain"><figcaption><span>element.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```javascript</div><div class="line">&lt;!-- Directives --&gt;</div><div class="line">&lt;script src=&quot;js/directives/appInfo.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></h4><h4 id="3-In-the-new-file-js-directives-appInfo-html-Type-in-this-HTML-to-display-an-app’s-info"><a href="#3-In-the-new-file-js-directives-appInfo-html-Type-in-this-HTML-to-display-an-app’s-info" class="headerlink" title="3. In the new file js/directives/appInfo.html. Type in this HTML to display an app’s info:"></a>3. In the new file js/directives/appInfo.html. Type in this HTML to display an app’s info:</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img class="icon" ng-src="&#123;&#123; info.icon &#125;&#125;"&gt;</div><div class="line">&lt;h2 class="title"&gt;&#123;&#123; info.title &#125;&#125;&lt;/h2&gt;</div><div class="line">&lt;p class="developer"&gt;&#123;&#123; info.developer &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p class="price"&gt;&#123;&#123; info.price | currency &#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h4 id="4-In-index-html-replace-the-contents-of-the-first-card-div-with-the-new-element"><a href="#4-In-index-html-replace-the-contents-of-the-first-card-div-with-the-new-element" class="headerlink" title="4. In index.html, replace the contents of the first .card div with the new  element:"></a>4. In index.html, replace the contents of the first .card div with the new <app-info> element:</app-info></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card"</span>&gt;</div><div class="line">  &lt;app-info info="move"&gt;&lt;/app-info&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>附录：<br>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>, [<span class="string">'$scope'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</div><div class="line">  $scope.apps = [</div><div class="line">  	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/move.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'MOVE'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'MOVE, Inc.'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">0.99</span></div><div class="line">  	&#125;,</div><div class="line"> 	 	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/shutterbugg.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'Shutterbugg'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'Chico Dusty'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">2.99</span></div><div class="line">  	&#125;,</div><div class="line"> 	 	&#123;</div><div class="line">    	<span class="attr">icon</span>: <span class="string">'img/gameboard.jpg'</span>,</div><div class="line">    	<span class="attr">title</span>: <span class="string">'Gameboard'</span>,</div><div class="line">    	<span class="attr">developer</span>: <span class="string">'Armando Perez'</span>,</div><div class="line">    	<span class="attr">price</span>: <span class="number">1.99</span></div><div class="line">  	&#125;,  </div><div class="line"> 	 	&#123;</div><div class="line">      <span class="attr">icon</span>: <span class="string">'img/forecast.jpg'</span>,</div><div class="line">      <span class="attr">title</span>: <span class="string">'Forecast'</span>,</div><div class="line">      <span class="attr">developer</span>: <span class="string">'Forecast'</span>,</div><div class="line">      <span class="attr">price</span>: <span class="number">1.99</span></div><div class="line">    &#125;</div><div class="line">	]</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<p>What did we just do? We wrote code to teach the browser a new HTML element <figure class="highlight plain"><figcaption><span>and used it in the view to display each app's details.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">First in ```js/directives/appInfo.js```, we made a new directive. We used``` app.directive ```to create a new directive named ```&apos;appInfo&apos;```. It returns an object with three options:</div><div class="line"></div><div class="line">- ```restrict ```specifies how the directive will be used in the view. The ```&apos;E&apos; ```means it will be used as a new HTML element.</div><div class="line">- ```scope``` specifies that we will pass information into this directive through an attribute named ```info```. The ```=``` tells the directive to look for an attribute named ```info``` in the ```&lt;app-info&gt;``` element, like this:</div><div class="line">```javascript</div><div class="line"> &lt;app-info info=&quot;shutterbugg&quot;&gt;&lt;/app-info&gt;</div></pre></td></tr></table></figure></p>
+<p>The data in<figure class="highlight plain"><figcaption><span>```becomes available to use in the template given by ```templateURL```.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">- templateUrl specifies the HTML to use in order to display the data in scope.info. Here we use the HTML in js/directives/appInfo.html.</div><div class="line"></div><div class="line">#### 使用 Dective  添加function</div><div class="line">js/deritves/installApp.js</div><div class="line">```javascript</div><div class="line">app.directive(&apos;installApp&apos;, function() &#123;</div><div class="line">  return &#123;</div><div class="line">    restrict: &apos;E&apos;,</div><div class="line">    scope: &#123;&#125;,</div><div class="line">    templateUrl: &apos;js/directives/installApp.html&apos;,</div><div class="line"></div><div class="line">    link: function(scope, element, attrs) &#123;</div><div class="line">      scope.buttonText = &quot;Install&quot;,</div><div class="line">      scope.installed = false,</div><div class="line"></div><div class="line">      scope.download = function() &#123;</div><div class="line">        element.toggleClass(&apos;btn-active&apos;)</div><div class="line">        if(scope.installed) &#123;</div><div class="line">          scope.buttonText = &quot;Install&quot;;</div><div class="line">          scope.installed = false;</div><div class="line">        &#125; else &#123;</div><div class="line">          scope.buttonText = &quot;Uninstall&quot;;</div><div class="line">          scope.installed = true;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line">```  </div><div class="line">js/deritves/installApp.html</div><div class="line">```javascript</div><div class="line">&lt;button class=&quot;btn btn-active&quot; ng-click=&quot;download()&quot;&gt;</div><div class="line">  &#123;&#123; buttonText &#125;&#125;</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<p>index.html<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"card"</span> ng-repeat=<span class="string">"app in apps"</span>&gt;</div><div class="line"> &lt;app-info info="app"&gt;&lt;/app-info&gt;</div><div class="line"> &lt;install-app&gt;&lt;/install-app&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"js/directives/installApp.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><a id="AngularJS-basic-4"></a></p>
+<h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><p>关键词：  </p>
+<ul>
+<li>factory</li>
+<li>GET</li>
+</ul>
+<h4 id="1-Create-a-service-named-forecast-that-fetches-the-weather-data-from-the-server-In-the-new-file-js-services-forecast-js-Type-in-this-code-exactly-as-you-see-here"><a href="#1-Create-a-service-named-forecast-that-fetches-the-weather-data-from-the-server-In-the-new-file-js-services-forecast-js-Type-in-this-code-exactly-as-you-see-here" class="headerlink" title="1. Create a service named forecast that fetches the weather data from the server. In the new file js/services/forecast.js. Type in this code exactly as you see here:"></a>1. Create a service named forecast that fetches the weather data from the server. In the new file js/services/forecast.js. Type in this code exactly as you see here:</h4><p>js/services/forecast.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.factory(<span class="string">'forecast'</span>, [<span class="string">'$http'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$http</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> $http.get(<span class="string">'https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json'</span>)</div><div class="line">            .success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">              <span class="keyword">return</span> data;</div><div class="line">            &#125;)</div><div class="line">            .error(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">              <span class="keyword">return</span> err;</div><div class="line">            &#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<h4 id="2-Include-js-services-forecast-js-in-index-html-add-a-new"><a href="#2-Include-js-services-forecast-js-in-index-html-add-a-new" class="headerlink" title="2. Include js/services/forecast.js in index.html add a new "></a>2. Include js/services/forecast.js in index.html add a new <figure class="highlight plain"><figcaption><span>```element.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">index.html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div class=&quot;forecast&quot; ng-repeat=&quot;day in fiveDay.days&quot;&gt;</div><div class="line"></div><div class="line">&lt;!-- Services --&gt;</div><div class="line">&lt;script src=&quot;js/services/forecast.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></h4><h4 id="3-In-the-controller-modify-MainController-by-passing-in-the-forecast-service-like-this"><a href="#3-In-the-controller-modify-MainController-by-passing-in-the-forecast-service-like-this" class="headerlink" title="3. In the controller, modify MainController by passing in the forecast service, like this:"></a>3. In the controller, modify MainController by passing in the forecast service, like this:</h4><p>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>, [<span class="string">'$scope'</span>, <span class="string">'forecast'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, forecast</span>) </span>&#123;</div><div class="line">  forecast.success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    $scope.fiveDay = data;</div><div class="line">  &#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<h4 id="4-Inside-MainController-use-the-forecast-service-to-save-the-weather-data-into-scope-fiveDay-like-this"><a href="#4-Inside-MainController-use-the-forecast-service-to-save-the-weather-data-into-scope-fiveDay-like-this" class="headerlink" title="4. Inside MainController, use the forecast service to save the weather data into $scope.fiveDay, like this:"></a>4. Inside MainController, use the forecast service to save the weather data into $scope.fiveDay, like this:</h4><p>js/controllers/MainController.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">forecast.success(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">	$scope.fiveDay = data;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>How does it work?</p>
+<ul>
+<li>First in <figure class="highlight plain"><figcaption><span>we made a new service. We used ```app.factory``` to create a new service named ```forecast```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- The ```forecast``` service needs to use AngularJS&apos;s built-in ```$http``` to fetch JSON from the server. Therefore, we add ```$http``` to the ```forecast``` service as a dependency, like this:</div><div class="line">```javascript</div><div class="line"> [&apos;$http&apos;, function($http) &#123;</div><div class="line">   // ...</div><div class="line"> &#125;]</div></pre></td></tr></table></figure></li>
+</ul>
+<p>Now <figure class="highlight plain"><figcaption><span>is available to use inside ```forecast```.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- Then, inside ```forecast```, we use ```$http``` to construct an HTTP ```GET``` request for the weather data. If the request succeeds, the weather data is returned; otherwise the error info is returned.</div><div class="line">- Next in the controller, we used the ```forecast``` service to fetch data from the server. First we added ```forecast``` into ```MainController``` as a dependency so that it&apos;s available to use. Then within the controller we used ```forecast``` to asynchronously fetch the weather data from the server and store it into ```$scope.fiveDay</div></pre></td></tr></table></figure></p>
+<ul>
+<li>As before, any properties attached to <figure class="highlight plain"><figcaption><span>become available to use in the view. This means in ```index.html```, we can display the ```city_name``` using an expression as done before.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">----------</div><div class="line">&lt;a id=&quot;AngularJS-QA&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS 常错</div></pre></td></tr></table></figure></li>
+</ul>
+<p><img ng-src=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">&lt;a id=&quot;AngularJS-tircks&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS Tricks</div><div class="line">&lt;a id=&quot;AngularJS-tircks-1&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">#### 选择栏切换样式</div><div class="line">- html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==1?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(1)&quot; class=&quot;honor-click&quot;&gt;&lt;span&gt;全部&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==2?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(2)&quot;&gt;&lt;span&gt;本周&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==3?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(3)&quot;&gt;&lt;span&gt;本月&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==4?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(4)&quot;&gt;&lt;span&gt;自定义时间&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;td  ng-show=&quot;timeNavType==4&quot;&gt;</div><div class="line">	&lt;div class=&quot;myclass-honor-time&quot;&gt;</div><div class="line">			&lt;span&gt;&lt;/span&gt;</div><div class="line">			&lt;input type=&quot;text&quot; placeholder=&quot;2017-02-16&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/td&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$scope.timeNavType = <span class="number">1</span>;</div><div class="line">$scope.chooseTimeNav = <span class="function"><span class="keyword">function</span> (<span class="params">typ</span>) </span>&#123;</div><div class="line">		$scope.timeNavType = typ;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<hr>
 
           
         
