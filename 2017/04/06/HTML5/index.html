@@ -87,19 +87,20 @@
 
 
 
-<meta name="description" content="HTML5目录    Canvas                线条                          lineCap 线条样式              lineJoin 线条交叉                                Canvas宽高                          1234567891011121314151617181920">
+<meta name="description" content="HTML5  线条 线条样式 lineCap 设置或返回线条末端线帽的样式。 lineJoin 当两条线交汇时，设置或返回所创建边角的类型  12//向线条的每个末端添加平直/圆形、正方形的边缘context.lineCap=&quot;butt|round|square&quot;;  lineJoin 线条交叉12//斜角、圆角、尖角context.lineJoin=&quot;bevel|round|miter&quot;;  C">
 <meta name="keywords" content="HTML5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML5">
 <meta property="og:url" content="https://yingshanguo.github.io/2017/04/06/HTML5/index.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content="HTML5目录    Canvas                线条                          lineCap 线条样式              lineJoin 线条交叉                                Canvas宽高                          1234567891011121314151617181920">
+<meta property="og:description" content="HTML5  线条 线条样式 lineCap 设置或返回线条末端线帽的样式。 lineJoin 当两条线交汇时，设置或返回所创建边角的类型  12//向线条的每个末端添加平直/圆形、正方形的边缘context.lineCap=&quot;butt|round|square&quot;;  lineJoin 线条交叉12//斜角、圆角、尖角context.lineJoin=&quot;bevel|round|miter&quot;;  C">
+<meta property="og:image" content="https://yingshanguo.github.io/2017/04/06/HTML5/images/lineCap.png">
 <meta property="og:image" content="https://yingshanguo.github.io/2017/04/06/HTML5/images/lineJoin.png">
-<meta property="og:updated_time" content="2017-04-12T12:01:25.000Z">
+<meta property="og:updated_time" content="2017-04-12T12:17:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5">
-<meta name="twitter:description" content="HTML5目录    Canvas                线条                          lineCap 线条样式              lineJoin 线条交叉                                Canvas宽高                          1234567891011121314151617181920">
-<meta name="twitter:image" content="https://yingshanguo.github.io/2017/04/06/HTML5/images/lineJoin.png">
+<meta name="twitter:description" content="HTML5  线条 线条样式 lineCap 设置或返回线条末端线帽的样式。 lineJoin 当两条线交汇时，设置或返回所创建边角的类型  12//向线条的每个末端添加平直/圆形、正方形的边缘context.lineCap=&quot;butt|round|square&quot;;  lineJoin 线条交叉12//斜角、圆角、尖角context.lineJoin=&quot;bevel|round|miter&quot;;  C">
+<meta name="twitter:image" content="https://yingshanguo.github.io/2017/04/06/HTML5/images/lineCap.png">
 
 
 
@@ -324,7 +325,33 @@
       
 
       
-        <h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><ol><br>    <li><a href="#canvas">Canvas</a><br>      <ul><br>          <li><a href="#canvas-1">线条</a><br>            <ul><br>              <li><a href="#canvas-1.1">lineCap 线条样式</a></li><br>              <li><a href="#canvas-1.1">lineJoin 线条交叉</a></li><br>            </ul><br>          </li><br>          <li><a href="#canvas-2">Canvas宽高</a><br>            <ul><br>              <li><a href="#canvas-2.1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">              &lt;li&gt;&lt;a href=&quot;#canvas-2.2&quot;&gt;```&lt;canvas&gt;```宽高设置&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">          &lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=&quot;#canvas&quot;&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div><div class="line"></div><div class="line">&lt;a id=&quot;canvas-1&quot;&gt;&lt;/a&gt;</div><div class="line">#### 线条</div><div class="line"></div><div class="line">&lt;a id=&quot;canvas-1&quot;&gt;&lt;/a&gt;</div><div class="line">##### 线条样式</div><div class="line">- lineCap 设置或返回线条末端线帽的样式。</div><div class="line">- lineJoin 当两条线交汇时，设置或返回所创建边角的类型</div><div class="line"></div><div class="line">&lt;img src=&quot;./images/lineCap.png&quot;&gt;</div><div class="line">```javascript</div><div class="line">//向线条的每个末端添加平直/圆形、正方形的边缘</div><div class="line">context.lineCap=&quot;butt|round|square&quot;;</div></pre></td></tr></table></figure></a></li></ul></li></ul></li></ol></p>
+        <h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><!--#### 目录
+<ol>
+    <li><a href="#canvas">Canvas</a>
+      <ul>
+          <li><a href="#canvas-1">线条</a>
+            <ul>
+              <li><a href="#canvas-1.1">lineCap 线条样式</a></li>
+              <li><a href="#canvas-1.1">lineJoin 线条交叉</a></li>
+            </ul>
+          </li>
+          <li><a href="#canvas-2">Canvas宽高</a>
+            <ul>
+              <li><a href="#canvas-2.1">canvas里的宽高和css里的宽高</a></li>
+              <li><a href="#canvas-2.2">canvas宽高设置</a></li>
+            </ul>
+          </li>
+      </ul>
+    </li>
+    <li><a href="#canvas"></a></li>
+</ol>-->
+<p><a id="canvas-1"></a></p>
+<h4 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h4><p><a id="canvas-1"></a></p>
+<h5 id="线条样式"><a href="#线条样式" class="headerlink" title="线条样式"></a>线条样式</h5><ul>
+<li>lineCap 设置或返回线条末端线帽的样式。</li>
+<li>lineJoin 当两条线交汇时，设置或返回所创建边角的类型</li>
+</ul>
+<p><img src="./images/lineCap.png"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//向线条的每个末端添加平直/圆形、正方形的边缘</span></div><div class="line">context.lineCap=<span class="string">"butt|round|square"</span>;</div></pre></td></tr></table></figure></p>
 <p><a id="canvas-1.2"></a></p>
 <h5 id="lineJoin-线条交叉"><a href="#lineJoin-线条交叉" class="headerlink" title="lineJoin 线条交叉"></a>lineJoin 线条交叉</h5><p><img src="./images/lineJoin.png"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//斜角、圆角、尖角</span></div><div class="line">context.lineJoin=<span class="string">"bevel|round|miter"</span>;</div></pre></td></tr></table></figure></p>
 <p><a id="canvas-2"></a></p>
@@ -383,8 +410,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/31/CSS/" rel="prev" title="CSS">
-                CSS <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/31/AngularJS/" rel="prev" title="AngularJS">
+                AngularJS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -516,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5"><span class="nav-number">1.</span> <span class="nav-text">HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目录"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lineJoin-线条交叉"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">lineJoin 线条交叉</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas宽高"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Canvas宽高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1234567891011121314删除```<canvas>```里的宽高，宽：400；高：300；写在```<style>```里的效果：- 为什么两者的效果会不一样呢？　　canvas跟其他标签一样，也可以通过css来定义样式。但这里需要注意的是：canvas的默认宽高为300px * 150px,在css中为canvas定义宽高，实际上把宽高为300px * 150px的画布进行了拉伸，如果在这样的情况下进行canvas绘图，你得到的图形可能就是变形的效果。所以，在canvas绘图时，应该在canvas标签里直接定义宽高。<a id="canvas-2.2"></a>####  ```<canvas>```宽高设置- 分别用两种方式设置canvas的高度```javascript$("#myCanvas").attr({    "height": 300});</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5"><span class="nav-number">1.</span> <span class="nav-text">HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线条"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">线条</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线条样式"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">线条样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lineJoin-线条交叉"><span class="nav-number">1.0.0.1.2.</span> <span class="nav-text">lineJoin 线条交叉</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas宽高"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Canvas宽高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1234567891011121314删除```<canvas>```里的宽高，宽：400；高：300；写在```<style>```里的效果：- 为什么两者的效果会不一样呢？　　canvas跟其他标签一样，也可以通过css来定义样式。但这里需要注意的是：canvas的默认宽高为300px * 150px,在css中为canvas定义宽高，实际上把宽高为300px * 150px的画布进行了拉伸，如果在这样的情况下进行canvas绘图，你得到的图形可能就是变形的效果。所以，在canvas绘图时，应该在canvas标签里直接定义宽高。<a id="canvas-2.2"></a>####  ```<canvas>```宽高设置- 分别用两种方式设置canvas的高度```javascript$("#myCanvas").attr({    "height": 300});</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

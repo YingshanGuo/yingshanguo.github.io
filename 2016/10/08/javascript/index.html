@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="Javascript    核心（ECMAScript）                    预留关键字 Reserved keywords            控制结构                                   条件表达式的三元操作符                   switch 语句                                     对象">
+<meta name="description" content="Javascript 核心（ECMAScript）Javascript预留关键字 Reserved keywordshttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords  控制结构条件表达式的三元操作符1var allowed = (age &amp;gt; 18) ? &quot;yes">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript">
 <meta property="og:url" content="https://yingshanguo.github.io/2016/10/08/javascript/index.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content="Javascript    核心（ECMAScript）                    预留关键字 Reserved keywords            控制结构                                   条件表达式的三元操作符                   switch 语句                                     对象">
+<meta property="og:description" content="Javascript 核心（ECMAScript）Javascript预留关键字 Reserved keywordshttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords  控制结构条件表达式的三元操作符1var allowed = (age &amp;gt; 18) ? &quot;yes">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_js_domtree.gif">
-<meta property="og:updated_time" content="2017-04-12T12:04:14.000Z">
+<meta property="og:updated_time" content="2017-04-12T12:22:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript">
-<meta name="twitter:description" content="Javascript    核心（ECMAScript）                    预留关键字 Reserved keywords            控制结构                                   条件表达式的三元操作符                   switch 语句                                     对象">
+<meta name="twitter:description" content="Javascript 核心（ECMAScript）Javascript预留关键字 Reserved keywordshttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords  控制结构条件表达式的三元操作符1var allowed = (age &amp;gt; 18) ? &quot;yes">
 <meta name="twitter:image" content="http://www.w3school.com.cn/i/ct_js_domtree.gif">
 
 
@@ -324,18 +324,81 @@
       
 
       
-        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ol><br>    <li>核心（ECMAScript）<br>        <ul><br>            <li>预留关键字 Reserved keywords</li><br>            <li>控制结构<br>                <ul><br>                   <li>条件表达式的三元操作符</li><br>                   <li>switch 语句</li><br>               </ul><br>           </li><br>           <li>对象</li><br>           <li>数组<br>            <ul><br>                <li>length</li><br>                <li>forEach</li><br>                <li>push</li><br>            </ul><br>            </li><br>            <li>函数</li><br>            <li>自定义对象<br>                <ul><br>                   <li>原型链</li><br>               </ul><br>           </li><br>           <li>内部函数   （可以访问父函数作用域中的变量，减少全局变量）</li><br>           <li>闭包   （返回外部函数）<br>              <ul><br>                <li>内存泄漏（不要在匿名内部函数中使用变量、添加另外一个闭包）</li><br>              </ul><br>           </li><br>           <li>this</li><br>        </ul><br>    </li><br>    <li>ES6<br>        <ul><br>            <li>类<br>                <ul><br>                   <li>使用 extends 创建子类</li><br>                   <li>使用 super 引用父类</li><br>               </ul><br>           </li><br>       </ul><br>    </li><br>    <li>文档对象模型（DOM）<br>        <ul><br>            <li>aaa<br>                <ul><br>                   <li>bbbb</li><br>               </ul><br>           </li><br>       </ul><br>   </li><br>   <li> 浏览器对象模型（BOM）<br>    <ul><br>        <li>aaa<br>            <ul><br>               <li>bbbb</li><br>           </ul><br>       </li><br>   </ul><br>   </li><li><a href="">JavaScript写成类插件</a></li><br>   <li><a href="#javascript-question">JavaScript常错</a><br>      <ul><br>        <li><a href="#javascript-question-1">getElementById获取变量</a></li><br>      </ul><br>   </li><br>   <li><a href="#javascript-QA">JavaScript陷阱集</a></li><br><br></ol>
+        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><!--<ol>
+    <li>核心（ECMAScript）
+        <ul>
+            <li>预留关键字 Reserved keywords</li>
+            <li>控制结构
+                <ul>
+                   <li>条件表达式的三元操作符</li>
+                   <li>switch 语句</li>
+               </ul>
+           </li>
+           <li>对象</li>
+           <li>数组
+            <ul>
+                <li>length</li>
+                <li>forEach</li>
+                <li>push</li>
+            </ul>
+            </li>
+            <li>函数</li>
+            <li>自定义对象
+                <ul>
+                   <li>原型链</li>
+               </ul>
+           </li>
+           <li>内部函数   （可以访问父函数作用域中的变量，减少全局变量）</li>
+           <li>闭包   （返回外部函数）
+              <ul>
+                <li>内存泄漏（不要在匿名内部函数中使用变量、添加另外一个闭包）</li>      
+              </ul>
+           </li>
+           <li>this</li>
+        </ul>
+    </li>
+    <li>ES6
+        <ul>
+            <li>类
+                <ul>
+                   <li>使用 extends 创建子类</li>
+                   <li>使用 super 引用父类</li>
+               </ul>
+           </li>
+       </ul>
+    </li>
+    <li>文档对象模型（DOM）
+        <ul>
+            <li>aaa
+                <ul>
+                   <li>bbbb</li>
+               </ul>
+           </li>
+       </ul>
+   </li>
+   <li> 浏览器对象模型（BOM）
+    <ul>
+        <li>aaa
+            <ul>
+               <li>bbbb</li>
+           </ul>
+       </li>
+   </ul>
+   <li><a href="">JavaScript写成类插件</a></li>
+   <li><a href="#javascript-question">JavaScript常错</a>
+      <ul>
+        <li><a href="#javascript-question-1">getElementById获取变量</a></li>
+      </ul>
+   </li>
+   <li><a href="#javascript-QA">JavaScript陷阱集</a></li>
+</li>
+</ol>
 
-<p>浏览网站:</p>
-<ul>
-<li><p>核心（ECMAScript）</p>
-<ul>
-<li>重新介绍 JavaScript（JS 教程）<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript#数字" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript#数字</a></li>
-</ul>
-</li>
-<li><p>文档对象模型（DOM）</p>
-</li>
-</ul>
+浏览网站:
+ - 核心（ECMAScript）
+  - 重新介绍 JavaScript（JS 教程）https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript#数字
+
+ - 文档对象模型（DOM）-->
 <h2 id="核心（ECMAScript）"><a href="#核心（ECMAScript）" class="headerlink" title="核心（ECMAScript）"></a>核心（ECMAScript）</h2><h3 id="Javascript-1"><a href="#Javascript-1" class="headerlink" title="Javascript"></a>Javascript</h3><h4 id="预留关键字-Reserved-keywords"><a href="#预留关键字-Reserved-keywords" class="headerlink" title="预留关键字 Reserved keywords"></a>预留关键字 Reserved keywords</h4><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords</a></p>
 <hr>
 <h4 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h4><h5 id="条件表达式的三元操作符"><a href="#条件表达式的三元操作符" class="headerlink" title="条件表达式的三元操作符"></a>条件表达式的三元操作符</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> allowed = (age &gt; <span class="number">18</span>) ? <span class="string">"yes"</span> : <span class="string">"no"</span>;</div></pre></td></tr></table></figure>

@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="jQuery    jQuery基础                    效果                                    隐藏/显示                    淡入淡出                    滑动                    动画                    stop()                    Callb">
+<meta name="description" content="jQuery  jQuery基础 效果隐藏、显示、切换，滑动，淡入淡出，以及动画  slow，fast，normal或毫秒   隐藏、显示、切换 hide() show() toggle()  123$(&quot;#hide&quot;).click(function()&amp;#123;  $(&quot;p&quot;).hide(3000); //渐渐消失，slow，fast，normal或毫秒&amp;#125;);  淡入淡出 fadeI">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery">
 <meta property="og:url" content="https://yingshanguo.github.io/2016/12/25/jQuery/index.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content="jQuery    jQuery基础                    效果                                    隐藏/显示                    淡入淡出                    滑动                    动画                    stop()                    Callb">
-<meta property="og:updated_time" content="2017-04-12T12:07:29.000Z">
+<meta property="og:description" content="jQuery  jQuery基础 效果隐藏、显示、切换，滑动，淡入淡出，以及动画  slow，fast，normal或毫秒   隐藏、显示、切换 hide() show() toggle()  123$(&quot;#hide&quot;).click(function()&amp;#123;  $(&quot;p&quot;).hide(3000); //渐渐消失，slow，fast，normal或毫秒&amp;#125;);  淡入淡出 fadeI">
+<meta property="og:updated_time" content="2017-04-12T12:19:23.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery">
-<meta name="twitter:description" content="jQuery    jQuery基础                    效果                                    隐藏/显示                    淡入淡出                    滑动                    动画                    stop()                    Callb">
+<meta name="twitter:description" content="jQuery  jQuery基础 效果隐藏、显示、切换，滑动，淡入淡出，以及动画  slow，fast，normal或毫秒   隐藏、显示、切换 hide() show() toggle()  123$(&quot;#hide&quot;).click(function()&amp;#123;  $(&quot;p&quot;).hide(3000); //渐渐消失，slow，fast，normal或毫秒&amp;#125;);  淡入淡出 fadeI">
 
 
 
@@ -322,25 +322,78 @@
       
 
       
-        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><ol><br>    <li><a href="#jQuery-basic">jQuery基础</a><br>        <ul><br>            <li><a href="#jQuery-basic-1">效果</a><br>                <ul><br>                    <li><a href="#jQuery-basic-1.1">隐藏/显示</a></li><br>                    <li><a href="#jQuery-basic-1.2">淡入淡出</a></li><br>                    <li><a href="#jQuery-basic-1.3">滑动</a></li><br>                    <li><a href="#jQuery-basic-1.4">动画</a></li><br>                    <li><a href="#jQuery-basic-1.5">stop()</a></li><br>                    <li><a href="#jQuery-basic-1.6">Callback</a></li><br>                    <li><a href="#jQuery-basic-1.7">Chaining</a></li><br>                </ul><br>            </li><br>            <li><a href="#jQuery-basic-2">HTML</a><br>                <ul><br>                    <li><a href="#jQuery-basic-2.1">获取内容、 设置</a></li><br>                    <li><a href="#jQuery-basic-2.2">添加</a></li><br>                    <li><a href="#jQuery-basic-2.3">删除</a></li><br>                    <li><a href="#jQuery-basic-2.4">CSS 类</a></li><br>                    <li><a href="#jQuery-basic-2.5">css()</a></li><br>                    <li><a href="#jQuery-basic-2.6">尺寸</a></li><br>                </ul><br>            </li><br>            <li><a href="#jQuery-basic-3">遍历</a><br>                <ul><br>                    <li><a href="#jQuery-basic-3.1">祖先</a></li><br>                    <li><a href="#jQuery-basic-3.2">后代</a></li><br>                    <li><a href="#jQuery-basic-3.3">同胞</a></li><br>                    <li><a href="#jQuery-basic-3.4">过滤</a></li><br>                </ul><br>            </li><br>            <li><a href="#jQuery-basic-4">AJAX</a><br>                <ul><br>                    <li><a href="#jQuery-basic-4.1">加载</a></li><br>                    <li><a href="#jQuery-basic-4.2">Get/Post</a></li><br>                </ul><br>            </li><br>            <li><a href="#jQuery-basic-5">杂项</a><br>                <ul><br>                    <li><a href="#jQuery-basic-5.1">jQuery 和其他 JavaScript 框架</a></li><br>                </ul><br>            </li><br>        </ul><br>    </li><br>    <li><a href="#jQuery-tricks">jQuery技巧</a><br>        <ul><br>            <li><a href="#jQuery-tricks-1">延时</a></li><br>            <li><a href="#jQuery-tricks-2">自定义方法</a><br>                <ul><br>                    <li><a href="#jQuery-tricks-2.1">toggleText</a><br>                </li></ul><br>            </li><br>            <li><a href="#Query-tricks-3">判断data-name</a></li><br>        </ul><br>    </li><br>    <li><a href="#jQuery-question">jQuery常错</a><br>        <ul><br>            <li><a href="#jQuery-question-1">获取input的值</a></li><br>        </ul><br>    </li><br></ol>
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><!--<ol>
+    <li><a href="#jQuery-basic">jQuery基础</a>
+        <ul>
+            <li><a href="#jQuery-basic-1">效果</a>
+                <ul>
+                    <li><a href="#jQuery-basic-1.1">隐藏/显示</a></li>
+                    <li><a href="#jQuery-basic-1.2">淡入淡出</a></li>
+                    <li><a href="#jQuery-basic-1.3">滑动</a></li>
+                    <li><a href="#jQuery-basic-1.4">动画</a></li>
+                    <li><a href="#jQuery-basic-1.5">stop()</a></li>
+                    <li><a href="#jQuery-basic-1.6">Callback</a></li>
+                    <li><a href="#jQuery-basic-1.7">Chaining</a></li>
+                </ul>
+            </li>
+            <li><a href="#jQuery-basic-2">HTML</a>
+                <ul>
+                    <li><a href="#jQuery-basic-2.1">获取内容、 设置</a></li>
+                    <li><a href="#jQuery-basic-2.2">添加</a></li>
+                    <li><a href="#jQuery-basic-2.3">删除</a></li>
+                    <li><a href="#jQuery-basic-2.4">CSS 类</a></li>
+                    <li><a href="#jQuery-basic-2.5">css()</a></li>
+                    <li><a href="#jQuery-basic-2.6">尺寸</a></li>
+                </ul>
+            </li>
+            <li><a href="#jQuery-basic-3">遍历</a>
+                <ul>
+                    <li><a href="#jQuery-basic-3.1">祖先</a></li>
+                    <li><a href="#jQuery-basic-3.2">后代</a></li>
+                    <li><a href="#jQuery-basic-3.3">同胞</a></li>
+                    <li><a href="#jQuery-basic-3.4">过滤</a></li>
+                </ul>
+            </li>
+            <li><a href="#jQuery-basic-4">AJAX</a>
+                <ul>
+                    <li><a href="#jQuery-basic-4.1">加载</a></li>
+                    <li><a href="#jQuery-basic-4.2">Get/Post</a></li>
+                </ul>
+            </li>
+            <li><a href="#jQuery-basic-5">杂项</a>
+                <ul>
+                    <li><a href="#jQuery-basic-5.1">jQuery 和其他 JavaScript 框架</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#jQuery-tricks">jQuery技巧</a>
+        <ul>
+            <li><a href="#jQuery-tricks-1">延时</a></li>
+            <li><a href="#jQuery-tricks-2">自定义方法</a>
+                <ul>
+                    <li><a href="#jQuery-tricks-2.1">toggleText</a>
+                </ul>
+            </li>
+            <li><a href="#Query-tricks-3">判断data-name</a></li>
+        </ul>
+    </li>
+    <li><a href="#jQuery-question">jQuery常错</a>
+        <ul>
+            <li><a href="#jQuery-question-1">获取input的值</a></li>
+        </ul>
+    </li>
+</ol>
 
 
-<p>参考手册</p>
-<ul>
-<li><a href="http://www.w3school.com.cn/jquery/jquery_reference.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/jquery_reference.asp</a></li>
-<li>jQuery 文档操作<ul>
-<li><a href="http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp</a></li>
-</ul>
-</li>
-<li>jQuery 属性操作<ul>
-<li><a href="http://www.w3school.com.cn/jquery/jquery_ref_attributes.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/jquery_ref_attributes.asp</a></li>
-</ul>
-</li>
-<li>jQuery CSS 操作<ul>
-<li><a href="http://www.w3school.com.cn/jquery/jquery_ref_css.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/jquery_ref_css.asp</a></li>
-</ul>
-</li>
-</ul>
+参考手册
+- http://www.w3school.com.cn/jquery/jquery_reference.asp
+- jQuery 文档操作
+ - http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp
+- jQuery 属性操作
+ - http://www.w3school.com.cn/jquery/jquery_ref_attributes.asp
+- jQuery CSS 操作
+ - http://www.w3school.com.cn/jquery/jquery_ref_css.asp-->
 <p><a id="jQuery-basic"></a></p>
 <h2 id="jQuery基础"><a href="#jQuery基础" class="headerlink" title="jQuery基础"></a>jQuery基础</h2><p><a id="jQuery-basic-1"></a></p>
 <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>隐藏、显示、切换，滑动，淡入淡出，以及动画</p>
@@ -636,8 +689,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/31/AngularJS/" rel="next" title="AngularJS">
-                <i class="fa fa-chevron-left"></i> AngularJS
+              <a href="/2017/03/31/CSS/" rel="next" title="CSS">
+                <i class="fa fa-chevron-left"></i> CSS
               </a>
             
           </div>

@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="AngularJS    AngularJS基础                    AngularJS工作原理            My First App                    Directive            Services      AngularJS常错    AngularJS Tricks                    选择栏切换样式">
+<meta name="description" content="AngularJS  AngularJS基础 AngularJS 工作原理当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：  加载html，然后解析成DOM； 加载angular.js脚本； AngularJS等待DOMContentLoaded事件的触发； AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界； 使用ng-app中指定的模块配置$inj">
 <meta name="keywords" content="AngularJS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJS">
 <meta property="og:url" content="https://yingshanguo.github.io/2017/03/31/AngularJS/index.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content="AngularJS    AngularJS基础                    AngularJS工作原理            My First App                    Directive            Services      AngularJS常错    AngularJS Tricks                    选择栏切换样式">
+<meta property="og:description" content="AngularJS  AngularJS基础 AngularJS 工作原理当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：  加载html，然后解析成DOM； 加载angular.js脚本； AngularJS等待DOMContentLoaded事件的触发； AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界； 使用ng-app中指定的模块配置$inj">
 <meta property="og:image" content="https://yingshanguo.github.io/2017/03/31/AngularJS/images/AngularJS-001.png">
 <meta property="og:image" content="https://yingshanguo.github.io/2017/03/31/AngularJS/images/AngularJS-002.png">
-<meta property="og:updated_time" content="2017-04-12T12:01:05.540Z">
+<meta property="og:updated_time" content="2017-04-12T12:20:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS">
-<meta name="twitter:description" content="AngularJS    AngularJS基础                    AngularJS工作原理            My First App                    Directive            Services      AngularJS常错    AngularJS Tricks                    选择栏切换样式">
+<meta name="twitter:description" content="AngularJS  AngularJS基础 AngularJS 工作原理当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：  加载html，然后解析成DOM； 加载angular.js脚本； AngularJS等待DOMContentLoaded事件的触发； AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界； 使用ng-app中指定的模块配置$inj">
 <meta name="twitter:image" content="https://yingshanguo.github.io/2017/03/31/AngularJS/images/AngularJS-001.png">
 
 
@@ -325,9 +325,27 @@
       
 
       
-        <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><p><ol><br>    <li><a href="#AngularJS-basic">AngularJS基础</a><br>        <ul><br>            <li><a href="#AngularJS-basic-1">AngularJS工作原理</a><br>      </li><br>      <li><a href="#AngularJS-basic-2">My First App</a><br>        <!-- <ul>
+        <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><!--<ol>
+    <li><a href="#AngularJS-basic">AngularJS基础</a>
+        <ul>
+            <li><a href="#AngularJS-basic-1">AngularJS工作原理</a>
+      </li>
+      <li><a href="#AngularJS-basic-2">My First App</a>
+        <ul>
           <li><a href="#Angular-basic-2.1">Angular工作流程</a></li>
-        </ul> --><br>      </li><br>      <li><a href="#AngularJS-basic-3">Directive</a></li><br>            <li><a href="#AngularJS-basic-4">Services</a></li><br>    </ul><br>  </li><li><a href="#AngularJS-QA">AngularJS常错</a></li><br>    <li><a href="#AngularJS-tricks">AngularJS Tricks</a><br>        <ul><br>            <li><a href="#AngularJS-tricks-1">选择栏切换样式</a></li><br>        </ul><br>    </li><br></ol><br><a id="AngularJS-basic"></a></p>
+        </ul> 
+      </li>
+      <li><a href="#AngularJS-basic-3">Directive</a></li>
+            <li><a href="#AngularJS-basic-4">Services</a></li>
+    </ul>
+  <li><a href="#AngularJS-QA">AngularJS常错</a></li>
+    <li><a href="#AngularJS-tricks">AngularJS Tricks</a>
+        <ul>
+            <li><a href="#AngularJS-tricks-1">选择栏切换样式</a></li>
+        </ul>
+    </li>
+</ol>-->
+<p><a id="AngularJS-basic"></a></p>
 <h2 id="AngularJS基础"><a href="#AngularJS基础" class="headerlink" title="AngularJS基础"></a>AngularJS基础</h2><p><a id="AngularJS-basic-1"></a></p>
 <h3 id="AngularJS-工作原理"><a href="#AngularJS-工作原理" class="headerlink" title="AngularJS 工作原理"></a>AngularJS 工作原理</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
 <ul>
@@ -413,9 +431,9 @@
 </ul>
 <p>Now <figure class="highlight plain"><figcaption><span>is available to use inside ```forecast```.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- Then, inside ```forecast```, we use ```$http``` to construct an HTTP ```GET``` request for the weather data. If the request succeeds, the weather data is returned; otherwise the error info is returned.</div><div class="line">- Next in the controller, we used the ```forecast``` service to fetch data from the server. First we added ```forecast``` into ```MainController``` as a dependency so that it&apos;s available to use. Then within the controller we used ```forecast``` to asynchronously fetch the weather data from the server and store it into ```$scope.fiveDay</div></pre></td></tr></table></figure></p>
 <ul>
-<li>As before, any properties attached to <figure class="highlight plain"><figcaption><span>become available to use in the view. This means in ```index.html```, we can display the ```city_name``` using an expression as done before.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">----------</div><div class="line">&lt;a id=&quot;AngularJS-QA&quot;&gt;&lt;/a&gt;</div><div class="line">### AngularJS 常错</div></pre></td></tr></table></figure></li>
+<li>As before, any properties attached to <figure class="highlight plain"><figcaption><span>become available to use in the view. This means in ```index.html```, we can display the ```city_name``` using an expression as done before.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">----------</div><div class="line">&lt;a id=&quot;AngularJS-QA&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS 常错</div></pre></td></tr></table></figure></li>
 </ul>
-<p><img ng-src=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">&lt;a id=&quot;AngularJS-tircks&quot;&gt;&lt;/a&gt;</div><div class="line">### AngularJS Tricks</div><div class="line">&lt;a id=&quot;AngularJS-tircks-1&quot;&gt;&lt;/a&gt;</div><div class="line">#### 选择栏切换样式</div><div class="line">- html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==1?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(1)&quot; class=&quot;honor-click&quot;&gt;&lt;span&gt;全部&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==2?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(2)&quot;&gt;&lt;span&gt;本周&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==3?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(3)&quot;&gt;&lt;span&gt;本月&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==4?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(4)&quot;&gt;&lt;span&gt;自定义时间&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;td  ng-show=&quot;timeNavType==4&quot;&gt;</div><div class="line">	&lt;div class=&quot;myclass-honor-time&quot;&gt;</div><div class="line">			&lt;span&gt;&lt;/span&gt;</div><div class="line">			&lt;input type=&quot;text&quot; placeholder=&quot;2017-02-16&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/td&gt;</div></pre></td></tr></table></figure></p>
+<p><img ng-src=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">&lt;a id=&quot;AngularJS-tircks&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">### AngularJS Tricks</div><div class="line">&lt;a id=&quot;AngularJS-tircks-1&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">#### 选择栏切换样式</div><div class="line">- html</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==1?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(1)&quot; class=&quot;honor-click&quot;&gt;&lt;span&gt;全部&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==2?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(2)&quot;&gt;&lt;span&gt;本周&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==3?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(3)&quot;&gt;&lt;span&gt;本月&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li class=&quot;&#123;&#123;timeNavType==4?&apos;honor-click&apos;:&apos;&apos;&#125;&#125;&quot; ng-click=&quot;chooseTimeNav(4)&quot;&gt;&lt;span&gt;自定义时间&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;td  ng-show=&quot;timeNavType==4&quot;&gt;</div><div class="line">	&lt;div class=&quot;myclass-honor-time&quot;&gt;</div><div class="line">			&lt;span&gt;&lt;/span&gt;</div><div class="line">			&lt;input type=&quot;text&quot; placeholder=&quot;2017-02-16&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/td&gt;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>js</li>
 </ul>
@@ -463,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/31/CSS/" rel="next" title="CSS">
-                <i class="fa fa-chevron-left"></i> CSS
+              <a href="/2017/04/06/HTML5/" rel="next" title="HTML5">
+                <i class="fa fa-chevron-left"></i> HTML5
               </a>
             
           </div>
@@ -473,8 +491,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/25/jQuery/" rel="prev" title="jQuery">
-                jQuery <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/31/CSS/" rel="prev" title="CSS">
+                CSS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
