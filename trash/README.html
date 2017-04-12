@@ -87,18 +87,16 @@
 
 
 
-<meta name="description" content=".container{       width: 580px;       height: 605px;       position: absolute;       padding-top:100px;       left: 50%;       transform: translate(-50%, 0%);     }     .back{">
+<meta name="description" content="Hexo使用说明 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面  hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹  hexo server (hexo s) 启动本地web服务，用于博客的预览 hexo deploy (hexo d) 部署播客到远端（比如github">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yoko Kuok's Blog">
-<meta property="og:url" content="https://yingshanguo.github.io/404.html">
+<meta property="og:url" content="https://yingshanguo.github.io/trash/README.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content=".container{       width: 580px;       height: 605px;       position: absolute;       padding-top:100px;       left: 50%;       transform: translate(-50%, 0%);     }     .back{">
-<meta property="og:image" content="https://yingshanguo.github.io/images/404.jpg">
-<meta property="og:updated_time" content="2017-04-12T11:25:43.000Z">
+<meta property="og:description" content="Hexo使用说明 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面  hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹  hexo server (hexo s) 启动本地web服务，用于博客的预览 hexo deploy (hexo d) 部署播客到远端（比如github">
+<meta property="og:updated_time" content="2017-04-12T11:24:50.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yoko Kuok's Blog">
-<meta name="twitter:description" content=".container{       width: 580px;       height: 605px;       position: absolute;       padding-top:100px;       left: 50%;       transform: translate(-50%, 0%);     }     .back{">
-<meta name="twitter:image" content="https://yingshanguo.github.io/images/404.jpg">
+<meta name="twitter:description" content="Hexo使用说明 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面  hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹  hexo server (hexo s) 启动本地web服务，用于博客的预览 hexo deploy (hexo d) 部署播客到远端（比如github">
 
 
 
@@ -126,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://yingshanguo.github.io/404.html"/>
+  <link rel="canonical" href="https://yingshanguo.github.io/trash/README.html"/>
 
 
 
@@ -258,55 +256,22 @@
 
     
     
-      <!DOCTYPE HTML>
-<html>
+      <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h4><ul>
+<li>hexo new “postName” #新建文章</li>
+<li><p>hexo new page “pageName” #新建页面</p>
+</li>
+<li><p>hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</p>
+</li>
+<li>hexo server (hexo s) 启动本地web服务，用于博客的预览</li>
+<li>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台）</li>
+</ul>
+<h4 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h4><ul>
+<li>hexo clean 清除缓存</li>
+<li>hexo g  生成静态页面</li>
+<li>hexo s -p 3600  生成预览 </li>
+<li>hexo d 生产部署到Github</li>
+</ul>
 
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="robots" content="all">
-  <meta name="robots" content="index,follow">
-  <style type="text/css">
-    .container{
-      width: 580px;
-      height: 605px;
-      position: absolute;
-      padding-top:100px;
-      left: 50%;
-      transform: translate(-50%, 0%);
-    }
-    .back{
-      display: block;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-  <img src="./images/404.jpg" alt="找不到网页">
-  <div class="back">
-    <span id="time">5</span>
-    <span>秒后回到主页</span>
-    <a href="back()">返回</a>
-  </div>
-  </div>
-  <script type="text/javascript">
-    var num = document.getElementById("time").innerHTML;
-    function count() {
-      num--;
-      document.getElementById("time").innerHTML = num;
-      if (num == 0) {
-        window.location = "https://yingshanguo.github.io/";
-      }
-    }
-    setInterval("count()", 1000);   //调用定时方法
-    function back() {                //返回前一页面的方法
-      window.history.back();        //同window.history.go(-1);
-    }
-  </script>
-</body>
-
-</html>
     
   </div>
 
