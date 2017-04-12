@@ -87,13 +87,18 @@
 
 
 
+<meta name="description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yoko Kuok's Blog">
 <meta property="og:url" content="https://yingshanguo.github.io/404.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:updated_time" content="2017-04-12T09:45:42.791Z">
+<meta property="og:description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
+<meta property="og:image" content="https://yingshanguo.github.io/images/404.jpg">
+<meta property="og:updated_time" content="2017-04-12T11:05:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yoko Kuok's Blog">
+<meta name="twitter:description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
+<meta name="twitter:image" content="https://yingshanguo.github.io/images/404.jpg">
 
 
 
@@ -255,21 +260,48 @@
     
       <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8;">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="robots" content="all">
   <meta name="robots" content="index,follow">
-  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
+  <style>
+    img {
+      width: 580px;
+      height: 605px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
-<body>
-  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页">
-  </script>
-  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-</body>
-</html>
 
+<body>
+  <img src="./images/404.jpg" alt="找不到网页">
+  <div>
+    <span id="time">5</span>
+    <span>秒后回到主页</span>
+    <a href="back()">返回</a>
+  </div>
+  <script type="text/javascript">
+    var num = document.getElementById("time").innerHTML;
+    function count() {
+      num--;
+      document.getElementById("time").innerHTML = num;
+      if (num == 0) {
+        window.location = "https://yingshanguo.github.io/";
+      }
+    }
+    setInterval("count()", 1000);   //调用定时方法
+    function back() {                //返回前一页面的方法
+      window.history.back();        //同window.history.go(-1);
+    }
+  </script>
+</body>
+
+</html>
     
   </div>
 
