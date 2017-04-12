@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
+<meta name="description" content=".container{       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }     .back{       di">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yoko Kuok's Blog">
 <meta property="og:url" content="https://yingshanguo.github.io/404.html">
 <meta property="og:site_name" content="Yoko Kuok's Blog">
-<meta property="og:description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
+<meta property="og:description" content=".container{       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }     .back{       di">
 <meta property="og:image" content="https://yingshanguo.github.io/images/404.jpg">
-<meta property="og:updated_time" content="2017-04-12T11:05:05.000Z">
+<meta property="og:updated_time" content="2017-04-12T11:10:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yoko Kuok's Blog">
-<meta name="twitter:description" content="img {       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }                 5     秒后回">
+<meta name="twitter:description" content=".container{       width: 580px;       height: 605px;       position: absolute;       left: 50%;       top: 50%;       transform: translate(-50%, -50%);     }     .back{       di">
 <meta name="twitter:image" content="https://yingshanguo.github.io/images/404.jpg">
 
 
@@ -266,8 +266,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="robots" content="all">
   <meta name="robots" content="index,follow">
-  <style>
-    img {
+  <style type="text/css">
+    .container{
       width: 580px;
       height: 605px;
       position: absolute;
@@ -275,15 +275,20 @@
       top: 50%;
       transform: translate(-50%, -50%);
     }
+    .back{
+      display: block;
+    }
   </style>
 </head>
 
 <body>
+  <div class="container">
   <img src="./images/404.jpg" alt="找不到网页">
-  <div>
+  <div class="back">
     <span id="time">5</span>
     <span>秒后回到主页</span>
     <a href="back()">返回</a>
+  </div>
   </div>
   <script type="text/javascript">
     var num = document.getElementById("time").innerHTML;
